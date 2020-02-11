@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">commonLib</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="common_loading">加载中...</string>
+    <string name="net_error_holder">网络出错：%1$s</string>
+    <string name="empty_data">抱歉，没找到相关内容</string>
+    <string name="reload">重新加载</string>
+    <string name="net_error">网络异常</string>
+</resources>

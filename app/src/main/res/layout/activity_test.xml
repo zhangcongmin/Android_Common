@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.wwzl.smartportal.activity.TestActivity" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_test_ip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="@{()->activity.onClickTestIp()}"
+                android:padding="5dp"
+                android:text="测试环境" />
+
+            <Button
+                android:id="@+id/btn_live_ip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="@{()->activity.onClickLiveIp()}"
+                android:padding="5dp"
+                android:text="正式环境" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="0dp"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:digits="1234567890."
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/btn_change_ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->activity.onClickChangeIp()}"
+                android:padding="8dp"
+                android:text="自定义IP切换" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

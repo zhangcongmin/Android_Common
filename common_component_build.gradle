@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    resourcePrefix project.getName()+"_"
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+                includeCompileClasspath true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+        //support
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+        implementation project(path: ':commonlib')
+
+//        compileOnly rootProject.ext.dependencies["butterknife-compiler"]
+        annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+        compileOnly rootProject.ext.dependencies["arouter-compiler"]
+        compileOnly rootProject.ext.dependencies["parceler"]
+}

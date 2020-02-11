@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <style name="AppTheme.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+    <style name="NoneAnimation" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/Animation</item>
+        <item name="colorPrimaryDark">@color/white</item>
+    </style>
+
+    <style name="Animation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--dialog遮罩透明度-->
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+
+    </style>
+    <style name="translate_rihgt_animation_style" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_right</item>
+    </style>
+    <!-- 半透明+弹窗 -->
+    <style name="full_screen_dim_50_dialog_style" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/translate_rihgt_animation_style</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressView">
+        <attr name="progressIndeterminate" format="boolean" />
+        <attr name="barColor" format="color" />
+        <attr name="rimColor" format="color" />
+        <attr name="rimWidth" format="dimension" />
+        <attr name="spinSpeed" format="float" />
+        <attr name="barSpinCycleTime" format="integer" />
+        <attr name="circlRadius" format="dimension" />
+        <attr name="fillRadius" format="boolean" />
+        <attr name="barWidth" format="dimension" />
+        <attr name="linearProgress" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ScaleLayout">
+        <attr name="scale" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialHeader">
+        <attr name="mhPrimaryColor" format="color" />
+        <attr name="mhShadowColor" format="color" />
+        <attr name="mhShadowRadius" format="dimension" />
+        <attr name="mhShowBezierWave" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiStateView">
+        <attr name="msv_loadingView" format="reference" />
+        <attr name="msv_emptyView" format="reference" />
+        <attr name="msv_errorView" format="reference" />
+        <attr name="msv_viewState" format="enum">
+            <enum name="content" value="0" />
+            <enum name="error" value="1" />
+            <enum name="empty" value="2" />
+            <enum name="loading" value="3" />
+        </attr>
+        <attr name="msv_animateViewChanges" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginRight="52dp"
+        android:background="@drawable/shape_white_8_bg"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <com.ibukoo.common.view.CenterTextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="27dp"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/main_black"
+                android:textSize="17sp" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFF5F7FA" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvConfirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_item_common_left_bottom_bg"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="#FF24C680"
+                android:textSize="17sp" />
+
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#FFF5F7FA" />
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_item_common_right_bottom_bg"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/gray_aa"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

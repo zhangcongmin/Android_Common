@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:minHeight="?attr/actionBarSize"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="?attr/actionBarSize"
+        android:layout_marginEnd="?attr/actionBarSize"
+        android:textSize="18sp"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_back"
+        android:layout_height="match_parent"
+        android:layout_width="?attr/actionBarSize"
+        android:src="@mipmap/ic_back_black"
+        android:scaleType="center"
+        />
+    <TextView
+        android:id="@+id/tv_right_text"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        android:paddingEnd="18dp"
+        android:textSize="13sp" />
+    <View
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_aa"
+        />
+</FrameLayout>

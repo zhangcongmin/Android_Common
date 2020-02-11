@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'arouter-register'
+def versionTime() {
+    return new Date().format(".yyyyMMdd-HH", TimeZone.getTimeZone("GMT+08:00"))
+}
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.wwzl.smartportal"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"+versionTime()
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        eventBusIndex : 'com.yqqcc.application.MyEventBusIndex',
+                        AROUTER_MODULE_NAME : project.getName()
+                ]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //配置打包生成apk存放的路径
+    android.applicationVariants.all { variant ->
+        //判断是release还是debug版本
+        //获取渠道名称
+        def createTime = new Date().format("yyyyMMdd-HH∶mm", TimeZone.getTimeZone("GMT+08:00"))
+        //println variant.getPackageApplicationProvider().outputFile
+        //def output = variant.outputFile()
+        variant.outputs.each {
+            variant.getPackageApplicationProvider().get().outputDirectory.deleteDir()
+//                it.outputFileName = "XLN" + "_v" + defaultConfig.versionName + "-" +createTime+ ".apk"
+            it.outputFileName = "SmartPortal" + "_v" + defaultConfig.versionName + ".apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    annotationProcessor rootProject.ext.dependencies["parceler"]
+
+//    implementation project(path: ':category')
+    implementation project(path: ':commonlib')
+    annotationProcessor "org.projectlombok:lombok:1.18.10"
+}
+
+//apply plugin: 'auto-register'
+//autoregister {
+//    registerInfo = [
+//            [
+//                    'scanInterface'             : 'com.wwzl.commonlib.arouter_interface.IArouter'
+//                    , 'scanSuperClasses'        : ['com.wwzl.commonlib.fragment.BaseFragment']
+//                    , 'codeInsertToClassName'   : 'com.wwzl.commonlib.arouter.RouterManager'
+//                    //未指定codeInsertToMethodName，默认插入到static块中，故此处register必须为static方法
+//                    , 'registerMethodName'      : 'register' //
+//                    , 'exclude'                 : [
+//                    //排除的类，支持正则表达式（包分隔符需要用/表示，不能用.）
+//                    'com.billy.android.autoregister.demo.BaseCategory'.replaceAll('\\.', '/') //排除这个基类
+//            ]
+//            ]
+//    ]
+//}
