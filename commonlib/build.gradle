@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
+//apply plugin: 'maven'
 //apply plugin: 'com.github.dcendents.android-maven'
 
 
@@ -122,14 +122,14 @@ dependencies {
     api 'com.github.chrisbanes:PhotoView:2.0.0'
 }
 
-uploadArchives{
-    repositories.mavenDeployer{
-        // 配置本地仓库路径，项目根目录下的repository目录中
-        repository(url: uri('../repository'))
-        pom.groupId = "com.worldlinking.android_commonlib"// 唯一标识（通常为模块包名，也可以任意）
-        pom.artifactId = "WWZL_CommonLib" // 项目名称（通常为类库模块名称，也可以任意）
-        pom.version = "1.0.0" // 版本号
-    }
-}
-
-apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
+//uploadArchives{
+//    repositories.mavenDeployer{
+//        // 配置本地仓库路径，项目根目录下的repository目录中
+//        repository(url: uri('../repository'))
+//        pom.groupId = "com.worldlinking.android_commonlib"// 唯一标识（通常为模块包名，也可以任意）
+//        pom.artifactId = "WWZL_CommonLib" // 项目名称（通常为类库模块名称，也可以任意）
+//        pom.version = "1.0.0" // 版本号
+//    }
+//}
+//
+//apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
