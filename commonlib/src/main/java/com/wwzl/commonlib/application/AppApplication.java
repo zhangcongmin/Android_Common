@@ -56,15 +56,12 @@ public class AppApplication extends Application {
         instance = this;
         mContext = this.getApplicationContext();
         init();
-        initCrashHandler();
+//        initCrashHandler();
     }
 
-
-
-
-    private void initCrashHandler() {
-        CrashReport.initCrashReport(getApplicationContext(), "2222e41055", BuildConfig.DEBUG);
-    }
+//    private void initCrashHandler() {
+//        CrashReport.initCrashReport(getApplicationContext(), "2222e41055", BuildConfig.DEBUG);
+//    }
 
 
     public static Context getContext() {
