@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'maven'
+apply plugin: 'maven-publish'
 //apply plugin: 'com.github.dcendents.android-maven'
 
 
@@ -121,7 +121,15 @@ dependencies {
 
     api 'com.github.chrisbanes:PhotoView:2.0.0'
 }
-
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.worldlinking.android_common'
+            artifactId = 'wwzl_common'
+            version = '1.0.0'
+        }
+    }
+}
 //uploadArchives{
 //    repositories.mavenDeployer{
 //        // 配置本地仓库路径，项目根目录下的repository目录中
