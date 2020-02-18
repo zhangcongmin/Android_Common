@@ -78,10 +78,6 @@ public class AppApplication extends Application {
             ARouter.openDebug();
         }
         ARouter.init(this);
-        SmartRefreshLayout.setDefaultRefreshFooterCreator((context, layout) -> {
-            initFooterString();
-            return new CustomerFooter(context).setSpinnerStyle(SpinnerStyle.Translate);
-        });
     }
 
 
