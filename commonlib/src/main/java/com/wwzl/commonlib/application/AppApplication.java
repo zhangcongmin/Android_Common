@@ -22,27 +22,27 @@ public class AppApplication extends Application {
     private static AppApplication instance;
     private static Context mContext;
 
-    static {
-        //启用矢量图兼容
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        //设置全局默认配置（优先级最低，会被其他设置覆盖）
-        SmartRefreshLayout.setDefaultRefreshInitializer((context, layout) -> {
-            //全局设置（优先级最低）
-            layout.setEnableAutoLoadMore(false);
-            layout.setEnableOverScrollDrag(false);
-            layout.setEnableOverScrollBounce(false);
-            layout.setEnableLoadMoreWhenContentNotFull(true);
-            layout.setEnableScrollContentWhenRefreshed(true);
-        });
-        SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> {
-            MaterialHeader header = new MaterialHeader(context);
-            int color = R.color.colorPrimary;
-            //全局设置主题颜色（优先级第二低，可以覆盖 DefaultRefreshInitializer 的配置，与下面的ClassicsHeader绑定）
-            layout.setPrimaryColorsId(color);
-            header.setColorSchemeResources(color, color, color, color, color, color);
-            return header;
-        });
-    }
+//    static {
+//        //启用矢量图兼容
+//        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+//        //设置全局默认配置（优先级最低，会被其他设置覆盖）
+//        SmartRefreshLayout.setDefaultRefreshInitializer((context, layout) -> {
+//            //全局设置（优先级最低）
+//            layout.setEnableAutoLoadMore(false);
+//            layout.setEnableOverScrollDrag(false);
+//            layout.setEnableOverScrollBounce(false);
+//            layout.setEnableLoadMoreWhenContentNotFull(true);
+//            layout.setEnableScrollContentWhenRefreshed(true);
+//        });
+//        SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> {
+//            MaterialHeader header = new MaterialHeader(context);
+//            int color = R.color.colorPrimary;
+//            //全局设置主题颜色（优先级第二低，可以覆盖 DefaultRefreshInitializer 的配置，与下面的ClassicsHeader绑定）
+//            layout.setPrimaryColorsId(color);
+//            header.setColorSchemeResources(color, color, color, color, color, color);
+//            return header;
+//        });
+//    }
 
     //    public static boolean isEn = false;
     public static boolean isEn() {
